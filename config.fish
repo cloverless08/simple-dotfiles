@@ -29,6 +29,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias cdod 'cd ~/OneDrive'
     alias s 'yay -S'
     alias r 'yay -Rs'
+    alias update 'yay -Syu'
     alias logisim 'java -jar /home/cdemin/Java\ Apps/logisim-generic-2.7.1.jar'
     alias py python
     alias main 'python main.py'
