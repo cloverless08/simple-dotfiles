@@ -1,4 +1,4 @@
-# simple-fish-dotfiles
+# Fish and Fastfetch Dotfiles
 My custom rice of fish's config files.
 
 ## Requirements/Dependencies
