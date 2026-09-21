@@ -29,8 +29,10 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias cdod 'cd ~/OneDrive'
     alias s 'yay -S'
     alias r 'yay -Rs'
-    alias update 'yay -Syu'
+    alias @gang '@computer'
+    alias @chatgpt '@computer'
     alias logisim 'java -jar /home/cdemin/Java\ Apps/logisim-generic-2.7.1.jar'
+    alias frcc 'cd ~/OneDrive/FRCC/Fall\ 2025'
     alias py python
     alias main 'python main.py'
     alias home 'cd ~'
@@ -38,6 +40,14 @@ if status is-interactive # Commands to run in interactive sessions can go here
     # Functions
     function mkcd
         mkdir -p $argv[1] && cd $argv[1]
+    end
+
+    function connect_server --description "Connects to home server"
+        ssh cdemin@play.carrben.com -p 22
+    end
+
+    function connect_kamatera --description "Connects to cloud server"
+        ssh minecraft@kamatera.carrben.com -p 22
     end
 
     function newk --description "Resets console condition"
@@ -60,7 +70,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
     set CURRENT_DATETIME $(date +"%Y-%m-%d %H:%M:%S")
     # echo "Current date and time: $CURRENT_DATETIME"
 
-    set name "Enter your name here (config.fish ln 73)"
     if test $current_hour -ge 0; and test $current_hour -lt 12
         set greeting "Good Morning"
     else if test $current_hour -ge 12; and test $current_hour -lt 18
@@ -72,7 +81,10 @@ if status is-interactive # Commands to run in interactive sessions can go here
     end
 
     echo (set_color cyan)(date "+%A, %b %d, %Y")(set_color yellow)" • "(date "+%H:%M %p")(set_color normal)
-    echo "$greeting $name, what shall we do today?"
+    echo "$greeting Carrick, what shall we do today?"
+
+    #    date
+    #    echo "Welcome back Carrick, what shall we do today?"
     echo " "
 
     set -x XDG_CONFIG_HOME $HOME/.config
