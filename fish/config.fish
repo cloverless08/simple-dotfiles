@@ -87,6 +87,8 @@ if status is-interactive # Commands to run in interactive sessions can go here
 
     echo (set_color cyan)(date "+%A, %b %d, %Y")(set_color yellow)" • "(date "+%H:%M %p")(set_color normal)
     echo "$greeting Carrick, what shall we do today?"
+    echo " "
+    fortune
 
     #    date
     #    echo "Welcome back Carrick, what shall we do today?"
