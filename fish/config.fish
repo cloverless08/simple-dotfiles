@@ -23,6 +23,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias q 'qs -c ii'
     alias ls1 'ls -1 --color=auto'
     alias lsa 'ls -a --color=auto'
+    alias ll "ls -lah"
     alias rm 'rm -i'
     alias mv 'mv -i'
     alias cp 'cp -i'
@@ -80,6 +81,10 @@ if status is-interactive # Commands to run in interactive sessions can go here
         set greeting "Welcome Back"
     end
 
+      if not set -q SSH_AUTH_SOCK
+    eval (ssh-agent -c) > /dev/null
+    end
+
     echo (set_color cyan)(date "+%A, %b %d, %Y")(set_color yellow)" • "(date "+%H:%M %p")(set_color normal)
     echo "$greeting Carrick, what shall we do today?"
 
@@ -89,5 +94,8 @@ if status is-interactive # Commands to run in interactive sessions can go here
 
     set -x XDG_CONFIG_HOME $HOME/.config
     export EDITOR="nvim"
+    set -gx EDITOR = nvim
+    set -Ux OPENROUTER_API_KEY "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"
+
 
 end
