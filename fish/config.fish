@@ -37,6 +37,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias py python
     alias main 'python main.py'
     alias home 'cd ~'
+    alias commitall 'git add . && git commit -m '
 
     # Functions
     function mkcd
